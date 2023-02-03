@@ -22,14 +22,20 @@ def eredmeny(jatekos_lapok: [int], gep_lapok: [int]):
 
 def jatekos_vesztett_teszt():
     jatekos_lista = [9, 10, 2, 8]
-    gep_lista = [5, 4, 3, 1]
+    gep_lista = [5, 4, 3]
     kapott_eredmeny = eredmeny(jatekos_lista, gep_lista)
     vart_eredmeny = "Játékos vesztett"
 
+    # Játékos veszít, pontszám nagyobb mint 21
     if kapott_eredmeny == vart_eredmeny:
         print("A teszt sikeres!")
     else:
         print("A teszt sikertelen!")
+    # Játékos veszít nagyobb lapszám miatt
+    if len(jatekos_lista) > len(gep_lista):
+        print("Játékos vesztett! Neki van több lapja van.")
+    else:
+        print("A teszt sikertelen állapotban van!")
 
 
 def tesztek():
