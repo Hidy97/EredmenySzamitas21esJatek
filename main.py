@@ -31,7 +31,12 @@ def jatekos_vesztett_teszt():
         print("A teszt sikeres!")
     else:
         print("A teszt sikertelen!")
-    # Játékos veszít nagyobb lapszám miatt
+
+
+def jatekos_vesztett_teszt2():
+    jatekos_lista = [9, 10, 2, 8]
+    gep_lista = [5, 4, 3]
+
     if len(jatekos_lista) > len(gep_lista):
         print("Játékos vesztett! Neki van több lapja van.")
     elif len(jatekos_lista) == len(gep_lista):
@@ -42,6 +47,7 @@ def jatekos_vesztett_teszt():
 
 def tesztek():
     jatekos_vesztett_teszt()
+    jatekos_vesztett_teszt2()
 
 
 tesztek()
