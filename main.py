@@ -1,29 +1,39 @@
-jatekosLapok = [4, 3, 2]
-gepLapok = [4, 8, 9]
-
-
 def pontszamitas(lapok: [list]):
     osszpontszam = 0
     for i in range(len(lapok)):
         osszpontszam += lapok[i]
     return osszpontszam
-
-
-jatekos_Osszpontszam = pontszamitas(jatekosLapok)
-gep_Osszpontszam = pontszamitas(gepLapok)
-
 # megoldás
 
 
 def eredmeny(jatekos_lapok: [int], gep_lapok: [int]):
-    jatekos_lapok: int = jatekos_Osszpontszam
-    gep_lapok: int = gep_Osszpontszam
-    if jatekos_lapok > 21:
-        print("Játékos vesztett")
-    elif gep_lapok > 21:
-        print("Gép vesztett")
+    jatekos_pontok: int = pontszamitas(jatekos_lapok)
+    gep_pontok: int = pontszamitas(gep_lapok)
+    if jatekos_pontok > 21:
+        szoveg = "Játékos vesztett"
+    elif gep_pontok > 21:
+        szoveg = "Gép vesztett"
     else:
-        print("Mindkét fél lapja kevesebb mint 21")
+        szoveg = "Mindkét fél lapja kevesebb mint 21"
+    return szoveg
 
 # tesztesetek
-    eredmeny(jatekos_Osszpontszam, gep_Osszpontszam)
+
+
+def jatekos_vesztett_teszt():
+    jatekos_lista = [9, 10, 2, 8]
+    gep_lista = [5, 4, 3, 1]
+    kapott_eredmeny = eredmeny(jatekos_lista, gep_lista)
+    vart_eredmeny = "Játékos vesztett"
+
+    if kapott_eredmeny == vart_eredmeny:
+        print("A teszt sikeres!")
+    else:
+        print("A teszt sikertelen!")
+
+
+def tesztek():
+    jatekos_vesztett_teszt()
+
+
+tesztek()
